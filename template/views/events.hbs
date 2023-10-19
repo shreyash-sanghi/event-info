@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{>header}}
+    <title>Document</title>
+</head>
+
+<body>
+    {{>navbar}}
+         <div class="container-collection">
+         {{#each data}}
+     <div class="UpdateContianer">
+        <div class="Institude-name">
+            <h1>UIT RGPV</h1>
+        </div>
+        <div class="new-update">
+            <img src="/images/{{image}}" alt="" width="50px" height="50px">
+            <div class="event-name">
+                <h3>{{EventName}}</h3>
+            </div>
+            <div class="starting-date">
+                <p>Starting Date :- </p>
+                <h3>{{StartDate}}</h3>
+            </div>
+            <div class="last-date">
+                <p>Last Date :- </p>
+                <h3>{{EndDate}}</h3>
+            </div>
+            <div class="host-name">
+                 <p>Host Name :- </p>
+                <h4>{{HostName}}</h4>
+            </div>
+            
+            <div class="Institude-head">
+                 <p>Institude Head Name :- </p>
+                  <h4>{{Institude}}</h4>
+            </div>
+        </div>
+     </div>
+      {{/each}}
+    <script src="js/script.js"></script>
+     <script>document.querySelector('.Page').style.display="none";</script>
+</body>
+
+</html>

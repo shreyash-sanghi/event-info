@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   {{>header}}
+   <style>
+      .new-update {
+         position: relative;
+         left: 90%;
+         top: 3vh;
+         text-decoration: none;
+         font-size: x-large;
+         border: 2px solid black;
+         background-color: green;
+         color: white;
+         border-radius: 5px;
+         width: max-content;
+         padding: 8px 20px;
+      }
+
+      .flash-sucess {
+         display: flex;
+         align-items: center;
+         margin: auto;
+         width: 100%;
+         height: 7vh;
+         background-color: rgb(184, 245, 134);
+         display: none;
+
+      }
+   </style>
+   <title>Document</title>
+</head>
+
+<body>
+   {{>navbar}}
+   {{#if sucess}} 
+   <div class="alert alert-success" role="alert">{{sucess}}</div>
+   {{/if}}
+   <div class="flash-sucess">
+      <h1>{{msg.sucess}}</h1>
+   </div>
+
+
+   <a href="/secret" target="_mane" id="PersonalUpdate">New</a>
+
+   <table class="man-table-body">
+      <thead>
+         <tr class="BigscreenPersonalData">
+            <th>Photo</th>
+            <th>Email</th>
+            <th>EventName</th>
+            <th>Place</th>
+            <th>StartDate</th>
+            <th>EndDate</th>
+            <th>HostName</th>
+            <th>Institude</th>
+         </tr>
+      </thead>
+
+      {{#each data}}
+      <tbody>
+         <tr class="BigscreenPersonalData">
+            <td><img src="/images/{{image}}" alt="" width="50px" height="50px"></td>
+            <td>{{email}}</td>
+            <td class="MobileDetail">{{EventName}}</td>
+            <td>{{Place}}</td>
+            <td>{{StartDate}}</td>
+            <td>{{EndDate}}</td>
+            <td>{{HostName}}</td>
+            <td>{{Institude}}</td>
+            <td class="table-button">
+               <a class="edit-button" href="edit/{{_id}}">Edit</a>
+               <form action="PersonalPage/{{_id}}" method="POST">
+                  <input type="submit" value="DELETE" class="delete-button">
+               </form>
+            </td>
+         </tr>
+         <tr class="MobilePersonalData">
+            <td class="MobileDetail">{{EventName}}</td>
+            <td class="table-button">
+               <a href="#" class="ShowDetail">Detail</a>
+               <a class="edit-button" href="edit/{{_id}}">Edit</a>
+               <form action="PersonalPage/{{_id}}" method="POST">
+                  <input type="submit" value="DELETE" class="delete-button">
+               </form>
+            </td>
+         </tr>
+      </tbody>
+
+      {{/each}}
+
+   </table>
+
+    <script src="js/script2.js"></script>
+    <script> document.getElementById("home").style.display= "none"
+ document.querySelector(".events").style.display= "none";
+       const registration = document.querySelector("#registration");
+        registration.style.display = 'none';
+        </script>
+</body>
+
+</html>

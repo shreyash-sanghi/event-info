@@ -1,0 +1,28 @@
+<div class="nav-container">
+    <div class="logo"><img src="" alt="logo"></div>
+    <nav class="navbar">
+        <ul>
+            <li><a href="/" target="_main" id="home">Home</a></li>
+            <li><a href="/login" target="_main" id="login" class="login">Login</a></li>
+            <li><a href="/logout" target="_main" id="logout" class="logout">LogOut</a></li>
+            <li><a href="/register" target="_main" id="registration">Registration</a></li>
+            <li><a href="/events" target="_main" class="events">New Update</a></li>
+            <li><a href="/PersonalPage" target="_main" class="Page">Your Profile</a></li>
+        </ul>
+    </nav>
+    <div class="mobile-navbar-btn">
+        <img src="image/menu-icon.png" class="mobile-navbar-icon menu-outline"></img>
+        <img src="image/close-icon.png" class="mobile-navbar-icon close-outline"></img>
+    </div>
+</div>
+
+
+<script>
+    const mobile_btn = document.querySelector(".mobile-navbar-btn");
+    const header = document.querySelector(".nav-container");
+    console.log(header)
+    mobile_btn.addEventListener("click", () => {
+
+        header.classList.toggle("active");
+    })
+</script>
